@@ -1,0 +1,182 @@
+/*!
+ * Start Bootstrap - Business Casual (http://startbootstrap.com/template-overviews/business-casual)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-casual/blob/master/LICENSE)
+ */
+
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+   background: url('../img/logo.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6, .text-heading {
+  font-family: "Josefin Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+.tagline-upper {
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tagline-lower {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.text-expanded {
+  letter-spacing: 2px;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.text-lg {
+  font-size: 1.25rem;
+}
+
+.bg-faded {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.bg-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+hr.divider {
+  border-color: #292b2c;
+  max-width: 250px;
+}
+
+.map-container iframe {
+  pointer-events: none;
+}
+
+.map-container iframe.clicked {
+  pointer-events: auto;
+}
+
+.logo1{
+    width: 250px;
+    height: 150px
+    
+}
+
+.social_media{
+    
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+}
+
+#contact_info{
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    
+}
+
+#copyright{
+    position: relative;
+    top: 20px;
+    font-size: 15px;
+}
+
+#project{
+    position: relative;
+    top: 40px;
+    
+    
+}
+
+.req_camps{
+    float: left;
+    color: red;
+    font-size: 20px;
+    
+}
+
+.alarm{
+    border-color: red;
+}
+
+.alarm_text{
+   color: red;   
+    
+}
+
+.actual{
+   color: black; 
+   font-size: 22px;
+    
+}
+
+.home{
+    padding-top: 0px;
+    padding-right: 15%;
+    padding-bottom: 0px;
+    padding-left: 15%;
+    
+}
+
+/* proyect_view */
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.first-image{
+    float: right;
+}
+
+/*for admin dashboard*/
+
+.i_container{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+  }
+
+.p_image{
+    width: 100%;
+    height: auto;
+}
+
+.image_cont{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.imag{
+    width: 100%;
+    height: auto;
+}
+
+.marcar{
+    border-style: solid;
+}
+
+.view_i_container{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    
+}
+
+.link-position{
+    position: relative;
+    top: 180px;
+}
