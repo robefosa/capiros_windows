@@ -1,1 +1,4 @@
-data/common_data.php
+node_modules
+bower_components
+data/common_data.php 
+
