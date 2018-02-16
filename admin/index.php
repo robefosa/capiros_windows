@@ -35,7 +35,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Osvaldo Santos">
 
     <title>Admin Login</title>
 
@@ -65,6 +65,7 @@
 </head>
 
 <body>
+    <!--Check for empty fields in form -->
     <script type="text/javascript">
         function check()
         {
@@ -83,28 +84,26 @@
                     else{
                         return true;
                     }
-                  
                 }
         }
     </script>
-    <?php ?>
-    <div class="container">
+ 
+    <div id="principal-content" class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Please Sign In</h3>
                     </div>
-                    <div class="panel-body">
+                    <div id="wrap" class="panel-body">
                         
                         <form id="login" name="login" method="post" onsubmit="return check();">
-                           
-                          <?php 
+                           <?php 
                                 if($error_msg)
                                 {
                                     echo '<p class="alarm_text">' . $error_msg . '</p>';   
                                 }
-                          ?>
+                            ?>
                             <p id="error" name="error" class="alarm_text" style="display: none;">You should provide an user name</p>
                                     <div class="form-group">
                                         <input class="form-control" placeholder="User Name" id="user" name="user" value="" autofocus>
@@ -116,7 +115,7 @@
                                 </div>
                                 
                                 <div>
-                                    <a href="forgot_pass.php">I forgot my password</a>
+                                    <a id="forgot-pass">I forgot my password</a>
                                 </div>
                                
                                 <div class="checkbox">
@@ -131,7 +130,7 @@
             </div>
         </div>
     </div>
-
+   
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
 
@@ -143,6 +142,43 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+    
+    <!--handle document with jQuery --> 
+    <script type="text/javascript">
+        
+        //get form to ask for email
+            $("#forgot-pass").click(function(){
+                //show loading icon
+                $(document).ajaxStart(function(){
+                    $(".panel").html("<img src='../img/loading.gif'>");
+                });
+
+                $("#principal-content").load("pages/forgot_password.php");
+            });
+            
+        $(document).on("submit", "form", function(e){
+            e.preventDefault();
+            //send email with link to recover pass
+            if($(this).attr("id") == "email-submit")
+            {
+                    //show loading icon
+                    $(document).ajaxStart(function(){
+                        $(".panel").html("<img src='../img/loading.gif'>");
+                    });
+                    
+                    //send data to server using post and update content  
+                    var e_mail = {email: $("#email").val()};
+                    $.post("pages/forgot_password.php", e_mail, function(data){
+                        $("#principal-content").html(data);
+                    });
+                   
+                
+            }
+        });
+     
+       
+        
+    </script>
 
 </body>
 

@@ -8,6 +8,7 @@ $server_root_directory = $_SERVER['DOCUMENT_ROOT'] . '/capiros/';
 $slide_files_location = $_SERVER['DOCUMENT_ROOT'] . '/capiros/img/principal_slide';
 $slide_thumbs_location = $_SERVER['DOCUMENT_ROOT'] . '/capiros/img/principal_slide/thumbs';
 $temp_folder_path = 'temp/';
+$password_reset_script = "http://localhost/capiros/admin/pages/password_reset.php";
 
 
 /*Data base*/
