@@ -155,7 +155,8 @@
 
                 $("#principal-content").load("pages/forgot_password.php");
             });
-            
+           
+           //on submiting an email to restore the password
         $(document).on("submit", "form", function(e){
             e.preventDefault();
             //send email with link to recover pass

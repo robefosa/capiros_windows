@@ -1,0 +1,20 @@
+<html>
+    <head>
+      <title>Password Recovery link</title>
+    </head>
+    <body>
+      <p>Ud. ha recibido este e-mail porque se ha solicitado un cambio de contraseña<br> 
+        desde su cuenta de www.capiroswindows.com. Si Ud. no realizo esta solicitud,<br>  
+        por favor ignore este mensaje, de lo contrario, si Ud. desea cambiar la <br> 
+        contraseña que utiliza para acceder a su cuenta, de click en el siguiente <br> 
+        link, o copie y pegue la URL en su navegador web.</p>
+        <br><br>
+        <a href="#">
+            <button style="background: blue;">Clik here to reset your password</botton>
+        </a>
+
+        
+
+    </body>
+</html>
+

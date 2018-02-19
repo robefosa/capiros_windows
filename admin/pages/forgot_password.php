@@ -1,5 +1,6 @@
 <?php
 include_once '../../data/common_data.php';
+include_once '../classes/login.php';
 
 if(!$_POST)
 {
@@ -28,11 +29,13 @@ if(!$_POST)
    
     <?php
 }
- else {
+ else 
+ {
     
      //connect to db or show error
      try {
-        $conn = new mysqli("localhost", $read_only_user_name, $read_only_user_pass, $data_base_name);
+        $log = new login($total_control_user_name, $total_control_user_pass, $data_base_name, "login");
+        
     } catch (Exception $ex) {
     ?>
        
@@ -49,23 +52,11 @@ if(!$_POST)
     }
     
     //check for email in db
-    $sql = "SELECT * FROM login WHERE email = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $_POST['email']);
+        $email = $log->check_if_email_exist($_POST['email']);
         
-    if($stmt->execute())
-    {
-        $result = $stmt->get_result();
-        
-        if($result->num_rows >= 1)
+        if($email)
         {
-            //prepare data to send email
-            $data = $result->fetch_assoc();
-            $token = md5(time());
-            $link = $password_reset_script . "?email=" . $data['email'] . "&t=" . $token;
-           
-            //send email
-            echo $link;
+            $log->send_pass_recovery_email($email, $password_reset_script);
         }
         else {
             ?>
@@ -81,7 +72,6 @@ if(!$_POST)
             
             <?php
         }
-    }
+}
     
      
-}
